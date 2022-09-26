@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block body %}
+<main class="relative min-h-screen bg-white sm:flex sm:items-center sm:justify-center">
+    <div class="flex h-screen w-screen flex-col p-24">
+        <div class="grid grid-rows-[repeat(auto-fit,_minmax(288px,_1fr))] grid-flow-col gap-8 h-full">
+        {% for video in videos %}
+            <a href="/video/{{ video.vid }}"
+                class="flex h-[288px] w-[512px] flex-shrink-0 flex-grow-0 justify-center rounded bg-black shadow-md"
+            >
+                <img
+                    class="max-w-full self-center rounded"
+                    src={{ video.thumbnail_url }}
+                    alt={{ video.name }}
+                    loading="lazy"
+                />
+            </a>
+        {% endfor %}
+        </div>
+    </div>
+</main>
+{% endblock %}

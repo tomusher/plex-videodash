@@ -1,0 +1,4 @@
+aiohttp==3.8.3
+Jinja2==3.1.2
+starlette==0.20.4
+uvicorn==0.18.3
